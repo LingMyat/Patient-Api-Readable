@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Api</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>Api Patient Panel</h3>
+            <p>
+                <small>
+                    <b>Welcome to the Appointment API, a RESTful API for Hospital Appointment e-commerce web
+                        application.</b>
+                </small>
+            </p>
+            <p>
+                <small>
+                    <b>This API is developed with PHP(Laravel) and MySQL.</b>
+                </small>
+            </p>
+            <div class="col-md-3">
+                <div class="text-primary mb-3">
+                    <h6><b>Nrc Prefix</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Get All Nrc Prefixs</b></small>
+                        <small class="d-block"><b>Get All Nrc Prefix Codes</b></small>
+                        <small class="d-block"><b>Get Nrc Name_MM With Nrc_Code</b></small>
+                    </div>
+                </div>
+                <div class="text-primary mb-3">
+                    <h6><b>Auth</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Register</b></small>
+                        <small class="d-block"><b>Login</b></small>
+                        <small class="d-block"><b>Logout</b></small>
+                    </div>
+                </div>
+                <div class="text-primary mb-3">
+                    <h6><b>Diagnosis</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Get All Main Diagnosis</b></small>
+                        <small class="d-block"><b>Get Specific Main Diagnosis</b></small>
+                    </div>
+                </div>
+                <div class="text-primary mb-3">
+                    <h6><b>Doctors</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Get All Doctors</b></small>
+                        <small class="d-block"><b>Get Specific Doctors</b></small>
+                        <small class="d-block"><b>Get Doctors With Diagnosis</b></small>
+                    </div>
+                </div>
+                <div class="text-primary mb-3">
+                    <h6><b>Appointments</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Get All Appointments</b></small>
+                        <small class="d-block"><b>Make An Appointment</b></small>
+                    </div>
+                </div>
+                <div class="text-primary mb-3">
+                    <h6><b>Doctors</b></h6>
+                    <div class="ps-2">
+                        <small class="d-block"><b>Get All Chat Rooms</b></small>
+                        <small class="d-block"><b>Get All Chat Messages From Specific Rooms</b></small>
+                        <small class="d-block"><b>Send Message</b></small>
+                        <small class="d-block"><b>Send Image</b></small>
+                    </div>
+                </div>      
+                <!-- end -->
+            </div>
+            
+            <div class="col-md-9">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Nrc Prefix</h4>
+                    </div>
+                    <div class="card-body">
+                        <a data-bs-toggle="collapse" href="#collapseExample-nrc" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-nrc">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Nrc Prefixs</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/nrc</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-nrc">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all Nrc prefixs from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-nrc-code" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-nrc-code">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Nrc Prefix Codes</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/nrc/code</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-nrc-code">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all Nrc prefix codes from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-nrc-name" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-nrc-name">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get Nrc Name_MM With Nrc_Code</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/nrc/{nrc_code}/name</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-nrc-name">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch Nrc Prefix name_mm by nrc_code from the database. Nrc-code can get from
+                                        <a data-bs-toggle="collapse" href="#collapseExample-nrc-code" role="button"
+                                            aria-expanded="false" aria-controls="collapseExample-nrc-code"><b>
+                                                "Get All Nrc Prefix Codes"
+                                            </b></a>.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Example</span>
+                            <div class="card card-body">
+                                <div>
+                                    <small class="text-primary">
+                                        <b>
+                                            "http://127.0.0.1:8000/api/v1/patient/nrc/9/name"
+                                        </b>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Auth</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-register" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-register">
+                            <div class="alert py-2 alert-primary" role="alert">
+                                <small><b>Register</b></small> | <span
+                                    class="border border-primary p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/auth/register</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-register">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Patient register.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"User"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"email_or_phone":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"user@gmail.com"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"password":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"password"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"confirm_password":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"password"</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
+                        <a data-bs-toggle="collapse" href="#collapseExample-login" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-login">
+                            <div class="alert py-2 alert-primary" role="alert">
+                                <small><b>Login</b></small> | <span
+                                    class="border border-primary p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/auth/login</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-login">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Patient login.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"email_or_phone":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"user@gmail.com"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"password":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"password"</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
+
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-log-out" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-log-out">
+                            <div class="alert py-2 alert-danger" role="alert">
+                                <small><b>Logout</b></small> | <span
+                                    class="border border-danger p-1"><small>DELETE</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/auth/logout</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-log-out">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Patient Logout.To perform this action, user must be authenticated.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Diagnosis</h4>
+                    </div>
+                    <div class="card-body">
+                        <h6>Main Diagnosis</h6>
+                        <a data-bs-toggle="collapse" id="all_diagnosis" href="#collapseExample-main-diagnosis" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-main-diagnosis">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Main Diagnosis</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/main-diagnosis</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-main-diagnosis">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all main diagnosis from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-specific-diagnosis" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-specific-diagnosis">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get Specific Main Diagnosis</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/main-diagnosis?id={id}</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-specific-diagnosis">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch main diagnosis by ID from the database.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>
+                                    <small class="text-primary">
+                                        <b>
+                                            "http://127.0.0.1:8000/api/v1/patient/main-diagnosis?id=6"
+                                        </b>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Doctors</h4>
+                    </div>
+                    <div class="card-body">
+                        <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Doctors</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/doctors</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all doctors from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-1" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-1">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get Specific Doctors</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/doctors?doctor_id=1</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-1">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch doctor by ID from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-2" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-2">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get Doctors With Diagnosis</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/doctors?diagnosis_id={diagnosis_id}</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-2">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch specific doctors by diagnosis ID from the database.Diagnosis_id can get from <a href="">
+                                <b>"Get All Diagnosis"</b>
+                            </a></b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>
+                                    <small class="text-primary">
+                                        <b>
+                                            "http://127.0.0.1:8000/api/v1/patient/doctors?diagnosis_id=9"
+                                        </b>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Appointments</h4>
+                    </div>
+                    <div class="card-body">
+                        <a data-bs-toggle="collapse" href="#collapseExample-3" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-3">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Appointments</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/appointments</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-3">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all own appointment from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-4" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-4">
+                            <div class="alert py-2 alert-primary" role="alert">
+                                <small><b>Make An Appointment</b></small> | <span
+                                    class="border border-primary p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/appointments/store</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-4">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Making an appointment.</b></small></div>
+                            <span class="badge mt-3 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"doctor_time_id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"diagnosis_id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>8</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"note":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>( optional )</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Chat Room</h4>
+                    </div>
+                    <div class="card-body">
+                        <a data-bs-toggle="collapse" href="#collapseExample-rooms" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-rooms">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Chat Rooms</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/rooms</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-rooms">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all chat rooms from the database.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-5" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-5">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get All Chat Messages From Specific Rooms</b></small> | <span
+                                    class="border border-success p-1"><small>Get</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/rooms/{room_id}/room-messages</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-5">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>Fetch all messages from specific_rooms. Room_id can get from <a href=""><b>
+                                "Get All Chat Rooms"
+                            </b></a>.</b></small></div>
+                            <span class="badge mt-3 mb-1 text-bg-primary">Example</span>
+                            <div class="card card-body">
+                                <div>
+                                    <small class="text-primary">
+                                        <b>
+                                            "http://127.0.0.1:8000/api/v1/patient/rooms/1/room-messages"
+                                        </b>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-send-message" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-send-message">
+                            <div class="alert py-2 alert-primary" role="alert">
+                                <small><b>Send Message</b></small> | <span
+                                    class="border border-primary p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/rooms/store-room-message</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-send-message">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Send message to room. Store messages.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"room_id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"message":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-send-image" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-send-image">
+                            <div class="alert py-2 alert-primary" role="alert">
+                                <small><b>Send Image</b></small> | <span
+                                    class="border border-primary p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/rooms/store-chat-image</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-send-image">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Send image to room. Store chat image.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"room_id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"image":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"something.jpg / something.png"</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
+                        <!-- end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
