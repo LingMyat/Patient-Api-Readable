@@ -45,6 +45,8 @@
                     <div class="ps-2">
                         <small class="d-block"><b>Register</b></small>
                         <small class="d-block"><b>Login</b></small>
+                        <small class="d-block"><b>Profile</b></small>
+                        <small class="d-block"><b>Update</b></small>
                         <small class="d-block"><b>Logout</b></small>
                     </div>
                 </div>
@@ -211,6 +213,7 @@
                                 <div><b>}</b></div>
                             </div>
                         </div>
+
                         <a data-bs-toggle="collapse" href="#collapseExample-login" role="button" aria-expanded="false"
                             aria-controls="collapseExample-login">
                             <div class="alert py-2 alert-primary" role="alert">
@@ -246,6 +249,122 @@
                             </div>
                         </div>
 
+                        <a data-bs-toggle="collapse" href="#profile" role="button"
+                            aria-expanded="false" aria-controls="profile">
+                            <div class="alert py-2 alert-success" role="alert">
+                                <small><b>Get Profile</b></small> | <span
+                                    class="border border-success p-1"><small>GET</small></span>
+                                <small>http://127.0.0.1:8000/api/profile</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="profile">
+                            <span class="badge  text-bg-secondary">Description</span>
+                            <div><small><b>This API will return current Token owner.</b></small></div>
+                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div>{</div>
+                                <div>}</div>
+                            </div> -->
+                        </div>
+
+                        <a data-bs-toggle="collapse" href="#collapseExample-update" role="button" aria-expanded="false"
+                            aria-controls="collapseExample-update">
+                            <div class="alert py-2 alert-warning" role="alert">
+                                <small><b>Update</b></small> | <span
+                                    class="border border-warning p-1"><small>POST</small></span>
+                                <small>http://127.0.0.1:8000/api/v1/patient/auth/update</small>
+                            </div>
+                        </a>
+                        <div class="collapse mb-3" id="collapseExample-update">
+                            <span class="badge text-bg-secondary">Description</span>
+                            <div><small><b>Patient Profile Update.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div class="card card-body">
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"User Name"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"email":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"user@gmail.com"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"phone":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"09123456789"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"address":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"user address"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"date_of_birth":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"YY-mm-dd"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"gender":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Male or Female"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"nrc_number":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"User Nrc Number (6-number)"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"nrc_code":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Nrc_code From Get All Nrc Prefix Codes API"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"nrc_name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Nrc_name From Get Nrc Name_MM With Nrc_Code API"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
+                        </div>
 
                         <a data-bs-toggle="collapse" href="#collapseExample-log-out" role="button" aria-expanded="false"
                             aria-controls="collapseExample-log-out">
