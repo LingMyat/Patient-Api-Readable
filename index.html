@@ -80,10 +80,10 @@
                         <small class="d-block"><b>Send Message</b></small>
                         <small class="d-block"><b>Send Image</b></small>
                     </div>
-                </div>      
+                </div>
                 <!-- end -->
             </div>
-            
+
             <div class="col-md-9">
                 <div class="card mb-3">
                     <div class="card-header">
@@ -119,11 +119,29 @@
                         <div class="collapse mb-3" id="collapseExample-nrc-code">
                             <span class="badge  text-bg-secondary">Description</span>
                             <div><small><b>Fetch all Nrc prefix codes from the database.</b></small></div>
-                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Example</span>
                             <div class="card card-body">
-                                <div>{</div>
-                                <div>}</div>
-                            </div> -->
+                                <div>[</div>
+                                <div class="px-4">
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-4">
+                                    <small class="text-success ms-1">
+                                        <b>2</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-4">
+                                    <small class="text-success ms-1">
+                                        <b>3</b>
+                                    </small>
+                                    <b>...</b>
+                                </div>
+                                <div>]</div>
+                            </div>
                         </div>
 
                         <a data-bs-toggle="collapse" href="#collapseExample-nrc-name" role="button"
@@ -249,8 +267,8 @@
                             </div>
                         </div>
 
-                        <a data-bs-toggle="collapse" href="#profile" role="button"
-                            aria-expanded="false" aria-controls="profile">
+                        <a data-bs-toggle="collapse" href="#profile" role="button" aria-expanded="false"
+                            aria-controls="profile">
                             <div class="alert py-2 alert-success" role="alert">
                                 <small><b>Get Profile</b></small> | <span
                                     class="border border-success p-1"><small>GET</small></span>
@@ -259,7 +277,7 @@
                         </a>
                         <div class="collapse mb-3" id="profile">
                             <span class="badge  text-bg-secondary">Description</span>
-                            <div><small><b>This API will return current Token owner.</b></small></div>
+                            <div><small><b>This API will return current Token owner. To perform this action, user must be authenticated.</b></small></div>
                             <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div>{</div>
@@ -277,7 +295,7 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-update">
                             <span class="badge text-bg-secondary">Description</span>
-                            <div><small><b>Patient Profile Update.</b></small></div>
+                            <div><small><b>Patient Profile Update. To perform this action, user must be authenticated.</b></small></div>
                             <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div><b>{</b></div>
@@ -376,7 +394,8 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-log-out">
                             <span class="badge  text-bg-secondary">Description</span>
-                            <div><small><b>Patient Logout.To perform this action, user must be authenticated.</b></small></div>
+                            <div><small><b>Patient Logout.To perform this action, user must be
+                                        authenticated.</b></small></div>
                             <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div>{</div>
@@ -391,8 +410,8 @@
                     </div>
                     <div class="card-body">
                         <h6>Main Diagnosis</h6>
-                        <a data-bs-toggle="collapse" id="all_diagnosis" href="#collapseExample-main-diagnosis" role="button" aria-expanded="false"
-                            aria-controls="collapseExample-main-diagnosis">
+                        <a data-bs-toggle="collapse" id="all_diagnosis" href="#collapseExample-main-diagnosis"
+                            role="button" aria-expanded="false" aria-controls="collapseExample-main-diagnosis">
                             <div class="alert py-2 alert-success" role="alert">
                                 <small><b>Get All Main Diagnosis</b></small> | <span
                                     class="border border-success p-1"><small>GET</small></span>
@@ -401,16 +420,80 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-main-diagnosis">
                             <span class="badge text-bg-secondary">Description</span>
-                            <div><small><b>Fetch all main diagnosis from the database.</b></small></div>
-                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div><small><b>Fetch all main diagnosis from the database. <span class="text-danger">!!
+                                            Doctor Specilist are only sub_diagnosis !!</span></b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Example</span>
                             <div class="card card-body">
                                 <div>{</div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"ကင်ဆာရောဂါများ"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"sub_diagnosis":</b>
+                                    </small>
+                                    <small class="text-primary ms-1">
+                                        <b>[</b>
+                                    </small>
+                                </div>
+                                <div class="ps-5">
+                                    <div class="ps-5"><b>{</b></div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>8</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"name":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Can Cer"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"image":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"something.jpg / something.png"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5"><b>}</b></div>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-primary ms-1">
+                                        <b>]</b>
+                                    </small>
+                                </div>
                                 <div>}</div>
-                            </div> -->
+                            </div>
                         </div>
 
-                        <a data-bs-toggle="collapse" href="#collapseExample-specific-diagnosis" role="button" aria-expanded="false"
-                            aria-controls="collapseExample-specific-diagnosis">
+                        <a data-bs-toggle="collapse" href="#collapseExample-specific-diagnosis" role="button"
+                            aria-expanded="false" aria-controls="collapseExample-specific-diagnosis">
                             <div class="alert py-2 alert-success" role="alert">
                                 <small><b>Get Specific Main Diagnosis</b></small> | <span
                                     class="border border-success p-1"><small>GET</small></span>
@@ -450,11 +533,183 @@
                         <div class="collapse mb-3" id="collapseExample">
                             <span class="badge text-bg-secondary">Description</span>
                             <div><small><b>Fetch all doctors from the database.</b></small></div>
-                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div>{</div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"image":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"something.jpg / something.png"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Dr. Ling Myat Aung"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"SAMA":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Dr. SAMA(name)"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"degree":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Dr. Degree(name)"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"phone":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"09 459192583"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"email":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"bizkits223@gmail.com"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"biography":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Doctor's biography(can be long text)"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"specialities":</b>
+                                    </small>
+                                    <small class="text-primary ms-1">
+                                        <b>[</b>
+                                    </small>
+                                </div>
+                                <div class="ps-5">
+                                    <div class="ps-5"><b>{</b></div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>8</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"name":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Can Cer"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"image":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"something.jpg / something.png"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5"><b>}</b></div>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-primary ms-1">
+                                        <b>]</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"times":</b>
+                                    </small>
+                                    <small class="text-primary ms-1">
+                                        <b>[</b>
+                                    </small>
+                                </div>
+                                <div class="ps-5">
+                                    <div class="ps-5"><b>{</b></div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>1</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"time":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"09:30 AM - 11:30 AM"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"day":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Monday"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"day_mm":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"တနင်္လာနေ့"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5"><b>}</b></div>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-primary ms-1">
+                                        <b>]</b>
+                                    </small>
+                                </div>
                                 <div>}</div>
-                            </div> -->
+                            </div>
                         </div>
 
                         <a data-bs-toggle="collapse" href="#collapseExample-1" role="button" aria-expanded="false"
@@ -485,9 +740,10 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-2">
                             <span class="badge  text-bg-secondary">Description</span>
-                            <div><small><b>Fetch specific doctors by diagnosis ID from the database.Diagnosis_id can get from <a href="">
-                                <b>"Get All Diagnosis"</b>
-                            </a></b></small></div>
+                            <div><small><b>Fetch specific doctors by diagnosis ID from the database.Diagnosis_id can get
+                                        from <a href="">
+                                            <b>"Get All Diagnosis"</b>
+                                        </a></b></small></div>
                             <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div>
@@ -516,12 +772,157 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-3">
                             <span class="badge text-bg-secondary">Description</span>
-                            <div><small><b>Fetch all own appointment from the database.</b></small></div>
-                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <div><small><b>Fetch all own appointment from the database. To perform this action, user must be authenticated.</b></small></div>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Example</span>
                             <div class="card card-body">
                                 <div>{</div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>8</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"status":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"success"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"time":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"09:40 AM"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"text":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"စနေနေ့ 09:40 AM အရောက်လာရန်။"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"diagnosis":</b>
+                                    </small>
+                                    <small class="text-primary ms-1">
+                                        <b>[</b>
+                                    </small>
+                                </div>
+                                <div class="ps-5">
+                                    <div class="ps-5"><b>{</b></div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>8</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"name":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Can Cer"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"image":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"something.jpg / something.png"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5"><b>}</b></div>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-primary ms-1">
+                                        <b>]</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"doctor":</b>
+                                    </small>
+                                    <small class="text-primary ms-1">
+                                        <b>[</b>
+                                    </small>
+                                </div>
+                                <div class="ps-5">
+                                    <div class="ps-5"><b>{</b></div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>1</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"image":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"something.jpg / something.png"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"name":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Dr. Ling Myat Aung"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"SAMA":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Dr. SAMA(name)"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"degree":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Dr. Degree(name)"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5"><b>}</b></div>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-primary ms-1">
+                                        <b>]</b>
+                                    </small>
+                                </div>
                                 <div>}</div>
-                            </div> -->
+                            </div>
                         </div>
 
                         <a data-bs-toggle="collapse" href="#collapseExample-4" role="button" aria-expanded="false"
@@ -534,7 +935,7 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-4">
                             <span class="badge  text-bg-secondary">Description</span>
-                            <div><small><b>Making an appointment.</b></small></div>
+                            <div><small><b>Making an appointment. To perform this action, user must be authenticated.</b></small></div>
                             <span class="badge mt-3 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div><b>{</b></div>
@@ -587,11 +988,37 @@
                         <div class="collapse mb-3" id="collapseExample-rooms">
                             <span class="badge text-bg-secondary">Description</span>
                             <div><small><b>Fetch all chat rooms from the database.</b></small></div>
-                            <!-- <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
+                            <span class="badge mt-2 mb-1 text-bg-primary">Example</span>
                             <div class="card card-body">
-                                <div>{</div>
-                                <div>}</div>
-                            </div> -->
+                                <div><b>{</b></div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"id":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>1</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"name":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"Traditional Medicine"</b>
+                                    </small>
+                                    <b>,</b>
+                                </div>
+                                <div class="px-5">
+                                    <small class="text-danger">
+                                        <b>"room_img":</b>
+                                    </small>
+                                    <small class="text-success ms-1">
+                                        <b>"something.jpg / something.png"</b>
+                                    </small>
+                                </div>
+                                <div><b>}</b></div>
+                            </div>
                         </div>
 
                         <a data-bs-toggle="collapse" href="#collapseExample-5" role="button" aria-expanded="false"
@@ -605,8 +1032,8 @@
                         <div class="collapse mb-3" id="collapseExample-5">
                             <span class="badge  text-bg-secondary">Description</span>
                             <div><small><b>Fetch all messages from specific_rooms. Room_id can get from <a href=""><b>
-                                "Get All Chat Rooms"
-                            </b></a>.</b></small></div>
+                                                "Get All Chat Rooms"
+                                            </b></a>. To perform this action, user must be authenticated.</b></small></div>
                             <span class="badge mt-3 mb-1 text-bg-primary">Example</span>
                             <div class="card card-body">
                                 <div>
@@ -615,6 +1042,229 @@
                                             "http://127.0.0.1:8000/api/v1/patient/rooms/1/room-messages"
                                         </b>
                                     </small>
+                                </div>
+
+                                <div class="mt-3">
+                                    <div>{</div>
+                                    <div class="px-5">
+                                        <small class="text-danger">
+                                            <b>"room":</b>
+                                        </small>
+                                        <small class=" ms-1">
+                                            <b>{</b>
+                                        </small>
+                                    </div>
+                                    <div class="">
+                                        <div class="ps-5">
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"id":</b>
+                                                </small>
+                                                <small class="text-success ms-1">
+                                                    <b>1</b>
+                                                </small>
+                                                <b>,</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"name":</b>
+                                                </small>
+                                                <small class="text-success ms-1">
+                                                    <b>"Traditional Medicine"</b>
+                                                </small>
+                                                <b>,</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"room_img":</b>
+                                                </small>
+                                                <small class="text-success ms-1">
+                                                    <b>"something.jpg / something.png"</b>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="px-5">
+                                        <small class=" ms-1">
+                                            <b>}</b>
+                                        </small>
+                                        <b>,</b>
+                                    </div>
+                                    <div class="px-5">
+                                        <small class="text-danger">
+                                            <b>"messages":</b>
+                                        </small>
+                                        <small class="text-primary ms-1">
+                                            <b>[</b>
+                                        </small>
+                                    </div>
+                                    <div class="ps-5">
+                                        <div class="ps-5"><b>{</b></div>
+                                        <div class="ps-5">
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"id":</b>
+                                                </small>
+                                                <small class="text-success ms-1">
+                                                    <b>1</b>
+                                                </small>
+                                                <b>,</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"message":</b>
+                                                </small>
+                                                <small class="text-success ms-1">
+                                                    <b>"Message Text(can be long text)"</b>
+                                                </small>
+                                                <b>,</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"sender":</b>
+                                                </small>
+                                                <b>{</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <div class="ps-5">
+                                                    <small class="text-danger">
+                                                        <b>"id":</b>
+                                                    </small>
+                                                    <small class="text-success ms-1">
+                                                        <b>1</b>
+                                                    </small>
+                                                    <b>,</b>
+                                                </div>
+                                                <div class="ps-5">
+                                                    <small class="text-danger">
+                                                        <b>"name":</b>
+                                                    </small>
+                                                    <small class="text-success ms-1">
+                                                        <b>"Ling Myat Aung"</b>
+                                                    </small>
+                                                    <b>,</b>
+                                                </div>
+                                                <div class="ps-5">
+                                                    <small class="text-danger">
+                                                        <b>"image":</b>
+                                                    </small>
+                                                    <small class="text-success ms-1">
+                                                        <b>"something.jpg / something.png"</b>
+                                                    </small>
+                                                    <b>,</b>
+                                                </div>
+                                                <div class="ps-5">
+                                                    <small class="text-danger">
+                                                        <b>"role":</b>
+                                                    </small>
+                                                    <small class="text-success ms-1">
+                                                        <b>"can be (Patient or Doctor)"</b>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <div class="ps-5">
+                                                <b>} ,</b>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class="text-danger">
+                                                    <b>"child_messages":</b>
+                                                </small>
+                                                <small class=" text-primary ms-1">
+                                                    <b>[</b>
+                                                </small>
+                                            </div>
+                                            <div class="ps-5">
+                                                <div class="ps-5">
+                                                    <b>{</b>
+                                                </div>
+                                                <div class="ps-5">
+                                                    <div class="ps-5">
+                                                        <small class="text-danger">
+                                                            <b>"id":</b>
+                                                        </small>
+                                                        <small class="text-success ms-1">
+                                                            <b>2</b>
+                                                        </small>
+                                                        <b>,</b>
+                                                    </div>
+                                                    <div class="ps-5">
+                                                        <small class="text-danger">
+                                                            <b>"message":</b>
+                                                        </small>
+                                                        <small class="text-success ms-1">
+                                                            <b>"Message Text(can be long text)"</b>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="ps-5">
+                                                    <b>}</b>
+                                                </div>
+                                            </div>
+                                            <div class="ps-5">
+                                                <small class=" text-primary ms-1">
+                                                    <b>]</b>
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="ps-5"><b>}</b></div>
+                                    </div>
+                                    <div class="ps-5">
+                                        <small class="text-primary ms-1">
+                                            <b>]</b>
+                                        </small>
+                                        <b>,</b>
+                                    </div>
+                                    <div class="ps-5">
+                                        <small class="text-danger">
+                                            <b>"last_sender":</b>
+                                        </small>
+                                        <small class="ms-1">
+                                            <b>{</b>
+                                        </small>
+                                    </div>
+                                    <div class="ps-5">
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"id":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>1</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"name":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"Ling Myat Aung"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"image":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"something.jpg / something.png"</b>
+                                            </small>
+                                            <b>,</b>
+                                        </div>
+                                        <div class="ps-5">
+                                            <small class="text-danger">
+                                                <b>"role":</b>
+                                            </small>
+                                            <small class="text-success ms-1">
+                                                <b>"can be (Patient or Doctor)"</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-5">
+                                        <small class="ms-1">
+                                            <b>}</b>
+                                        </small>
+                                    </div>
+                                    <div>}</div>
                                 </div>
                             </div>
                         </div>
@@ -629,7 +1279,7 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-send-message">
                             <span class="badge text-bg-secondary">Description</span>
-                            <div><small><b>Send message to room. Store messages.</b></small></div>
+                            <div><small><b>Send message to room. Store messages. To perform this action, user must be authenticated.</b></small></div>
                             <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div><b>{</b></div>
@@ -647,7 +1297,8 @@
                                         <b>"message":</b>
                                     </small>
                                     <small class="text-success ms-1">
-                                        <b>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</b>
+                                        <b>"Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            industry."</b>
                                     </small>
                                 </div>
                                 <div><b>}</b></div>
@@ -664,7 +1315,7 @@
                         </a>
                         <div class="collapse mb-3" id="collapseExample-send-image">
                             <span class="badge text-bg-secondary">Description</span>
-                            <div><small><b>Send image to room. Store chat image.</b></small></div>
+                            <div><small><b>Send image to room. Store chat image. To perform this action, user must be authenticated.</b></small></div>
                             <span class="badge mt-2 mb-1 text-bg-primary">Body</span>
                             <div class="card card-body">
                                 <div><b>{</b></div>
